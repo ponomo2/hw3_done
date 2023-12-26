@@ -1,0 +1,10 @@
+{% load static %}
+
+<li class="media my-1">
+    <img class="img-fluid mt-1 mb-0" src="{% static 'img/default_avatar.png' %}" alt="Avatar" width="48" height="48">
+    <div class="media-body mr-sm-2 ml-sm-2" >
+        <p class="text-md-left mr-sm-2 ml-sm-2 mt-1 mb-0">Nickname</p>
+        <a class="link active mr-sm-2 ml-sm-2" href="{% url 'settingsP' %}">Settings</a>
+        <a class="link active mr-sm-2 ml-sm-2" href="#">Exit</a>
+    </div>
+</li>

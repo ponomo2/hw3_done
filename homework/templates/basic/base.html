@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ask ponomo2</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="col-2">
+        <a class="navbar-brand mx-sm-2" href="{% url 'mainQP' %}">AskPonomo2</a>
+      </div>
+      <div class="col-8">
+        <form class="form-inline my-lg-0">
+          <input class="form-control mr-0" size="75" type="search" placeholder="Type your question here" aria-label="Search">
+          <button class="btn btn-light ml-0 mt-0 mb-1 mr-5" type="submit"><img class="img-fluid mt-1 mb-0" src="{% static 'img/search.png' %}" alt="Search" width="25" height="25"></button>
+          {% include 'basic/ask_button.html' %}
+          <!--          <a class="btn btn-success ml-5 my-0" href="#" role="button" >Ask!</a>-->
+        </form>
+      </div>
+
+      <div class="col-2">
+        <ul class="list-unstyled">
+        {% block nav_left %} {% endblock %}
+          <!-- отличается если пользователь авторизован и нет -->
+        </ul>
+      </div>
+      </div>
+    </nav>
+    <hr class="hr my-lg-0" />
+<!-- кончился navbar -->
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 ml-5 mt-4">
+        <table>
+          <tbody>
+            <tr>
+              {% block title %} {% endblock %}
+              <!-- заголовок страницы -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+
+        {% block main_block %} {% endblock %}
+        <!-- здесь либо сразу карточки с вопросами
+        либо сначала вопрос
+        потом карточки с ответами -->
+
+      {% include 'basic/rightside.html'  %}
+
+      </div>
+    {% block pagination %} {% endblock %}
+
+  </body>
+</html>

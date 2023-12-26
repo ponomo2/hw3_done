@@ -1,0 +1,43 @@
+{% extends "basic/base.html" %}
+
+{% block nav_left %}
+<!-- если не авторизован вызываем одно, если авторизован другое. Пока пусть будет авторизован всегда-->
+  {% include 'basic/auth_nav_right.html' %}
+{% endblock %}
+
+
+{% block title %}
+        <div class="row">
+      <div class="col-1 ml-5"></div>
+      <div class="col-7 ml-0 mt-4">
+        <h2>New question</h2>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block main_block %}
+<div class="col-2"></div>
+<div class="col-7">
+<div class="ml-5">
+          <form class="mt-4" action="">
+            <label for="title">Title:</label>
+            <br>
+            <input type="title" class="form-control" id="question_title_input" maxlength="50" placeholder="Enter title here.." style="width: 55rem;">
+            <br>
+            <label for="title">Text:</label>
+            <br>
+            <textarea class="form-control" id="question_description_input" typename="text" maxlength="1000" placeholder="Enter description here (max 1000)" style="width: 55rem;"></textarea>
+            <br>
+            <label for="title">Tags:</label>
+            <br>
+            <input type="title" class="form-control" id="question_tags_input" maxlength="50" placeholder="Enter tags here.." style="width: 55rem;">
+            <br>
+            <input class="btn btn-success mt-3" type="submit" value="Ask" style="width: 7rem">
+          </form>
+        </div>
+</div>
+{% endblock %}
+
+
+</div>

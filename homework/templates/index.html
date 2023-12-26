@@ -1,0 +1,44 @@
+{% extends "basic/base.html" %}
+
+{% block nav_left %}
+<!-- если не авторизован вызываем одно, если авторизован другое. Пока пусть будет авторизован всегда-->
+  {% include 'basic/auth_nav_right.html' %}
+{% endblock %}
+
+
+{% block title %}
+        <table class="my-2">
+          <tbody>
+            <tr>
+              {% if new_or_not %}
+                <td class="align-baseline"><h2>New questions</h2></td>
+                <td class="align-baseline">
+                  <h4>
+                    <a class="link active mx-5" href="{% url 'hotQP' %}">Hot questions</a>
+                  </h4>
+                </td>
+              {% else %}
+                <td class="align-baseline"><h2>Hot questions</h2></td>
+                <td class="align-baseline">
+                  <h4>
+                    <a class="link active mx-5" href="{% url 'mainQP' %}">New questions</a>
+                  </h4>
+                </td>
+              {% endif %}
+            </tr>
+          </tbody>
+        </table>
+
+{% endblock %}
+
+{% block main_block %}
+<div class="col-1"></div>
+<div class="col-8 ml-5">
+{% include 'basic/question_card.html' %}
+</div>
+{% endblock %}
+
+
+{% block pagination %}
+{% include 'basic/pagination.html' %}
+{% endblock %}

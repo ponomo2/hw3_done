@@ -1,0 +1,32 @@
+{% extends "basic/base.html" %}
+
+{% block nav_left %}
+<!-- если не авторизован вызываем одно, если авторизован другое. Пока пусть будет авторизован всегда-->
+  {% include 'basic/auth_nav_right.html' %}
+{% endblock %}
+
+
+{% block title %}
+        <table class="my-2">
+          <tbody>
+            <tr>
+                <td class="align-baseline"><h2>For tag:</h2></td>
+                <td></td>
+                <td class="align-baseline"><h3>{{ tag.text }} </h3></td>
+            </tr>
+          </tbody>
+        </table>
+
+{% endblock %}
+
+{% block main_block %}
+<div class="col-1"></div>
+<div class="col-8 ml-5">
+{% include 'basic/question_card.html' %}
+</div>
+{% endblock %}
+
+
+{% block pagination %}
+{% include 'basic/pagination.html' %}
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "basic/base.html" %}
+{% block nav_left %}
+<!-- если не авторизован вызываем одно, если авторизован другое. Пока пусть будет авторизован всегда-->
+  {% include 'basic/unauth_nav_right.html' %}
+{% endblock %}
+
+
+{% block title %}
+<div class="row">
+      <div class="col-1 ml-5"></div>
+      <div class="col-7 my-2 ">
+        <h2>Registration</h2>
+      </div>
+</div>
+{% endblock %}
+
+{% block main_block %}
+     <div class="col-2"></div>
+      <div class="col-7">
+        <div class="ml-5">
+          <form>
+            <div class="alert alert-danger" role="alert">
+              Sorry, this email is already registred!
+            </div>
+            <div class="form-group">
+              <label for="login">Login:</label>
+              <input type="login" class="form-control" id="login" maxlength="30" placeholder="Login1234" style="width: 20rem;">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" maxlength="30"  placeholder="name@example.com" style="width: 20rem;">
+            </div>
+            <div class="form-group">
+              <label for="nickname">Nickname:</label>
+              <input type="nickname" class="form-control" id="nickname" maxlength="20" placeholder="coolname" style="width: 20rem;">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" maxlength="30" placeholder="Password" style="width: 20rem;">
+            </div>
+            <div class="form-group">
+              <label for="repeat_password">Repeat password</label>
+              <input type="password" class="form-control" id="repeat_password" maxlength="30" placeholder="Password" style="width: 20rem;">
+            </div>
+            <div class="form-group">
+              <label for="avatar">Upload avatar:</label><br>
+              <input type="file" class="form-control-file" id="avatar">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Sign up</button>
+          </form>
+        </div>
+        </div>
+{% endblock %}
+
+
+</div>

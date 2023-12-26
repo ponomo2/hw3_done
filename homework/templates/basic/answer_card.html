@@ -1,0 +1,32 @@
+{% load static %}
+
+{% for question in page_obj %}
+<div class="card ml-5 my-4" style="width: 60rem;">
+    <ul class="list-unstyled">
+        <li class="media my-1">
+            <img class="img-fluid mx-4 mt-3 mb-4 pt-1" src="{% static 'img/default_avatar.png' %}" alt="Avatar" width="80" height="80">
+            <div class="media-body mr-sm-2 ml-sm-2" >
+                <p class="text-md-left mr-sm-4 ml-sm-0 mb-3 mt-4">{{ question.text }}</p>
+            </div>
+        </li>
+        <li class="media pl-2 my-2">
+            <img class="img-fluid ml-3 mr-1" src="{% static 'img/arrow_up.png' %}" alt="Arrow up" width="20" height="20">
+            <h6>{{ question.likes }}</h6>
+            <img class="img-fluid ml-2 mr-1" src="{% static 'img/arrow_down.png' %}" alt="Arrow down" width="20" height="18">
+            <div class="form-check ml-5">
+                {% if question.correct == 1 %}
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" value="" id="checkedCheck">
+                {%endif%}
+                <label class="form-check-label" for="defaultCheck1">
+                Correct!
+                </label>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endfor %}
+
+
+
